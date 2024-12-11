@@ -5,19 +5,16 @@
   "author": "Stack Builders <info@stackbuilders.com> (https://github.com/stackbuilders)",
   "license": "MIT",
   "workspaces": [
-    "example/",
     "package/"
   ],
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "android": "yarn workspace example android",
     "build": "turbo build",
     "check": "turbo check && yarn lint",
     "compile": "turbo compile",
     "docs": "yarn workspace react-native-spotlight-tour docs",
-    "ios": "yarn workspace example ios",
     "lint": "eslint .",
     "release": "turbo release --concurrency=1",
     "start": "turbo start",
