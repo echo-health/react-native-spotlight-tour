@@ -1022,6 +1022,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@echo-health/react-native-spotlight-tour@workspace:^, @echo-health/react-native-spotlight-tour@workspace:package":
+  version: 0.0.0-use.local
+  resolution: "@echo-health/react-native-spotlight-tour@workspace:package"
+  dependencies:
+    "@assertive-ts/core": "npm:^2.1.0"
+    "@assertive-ts/sinon": "npm:^1.0.0"
+    "@floating-ui/react-native": "npm:^0.10.6"
+    "@testing-library/react-native": "npm:^12.5.1"
+    "@types/node": "npm:^20.14.10"
+    "@types/react-test-renderer": "npm:^18.3.0"
+    "@types/sinon": "npm:^17.0.3"
+    expect-type: "npm:^0.19.0"
+    react: "npm:^18.3.1"
+    react-fast-compare: "npm:^3.2.2"
+    react-is: "npm:^18.3.1"
+    react-native: "npm:0.74.3"
+    react-native-responsive-dimensions: "npm:^3.1.1"
+    react-native-svg: "npm:^15.4.0"
+    react-native-testing-mocks: "npm:^1.4.1"
+    react-test-renderer: "npm:^18.3.1"
+    semantic-release: "npm:^24.0.0"
+    semantic-release-yarn: "npm:^3.0.2"
+    sinon: "npm:^18.0.0"
+    styled-components: "npm:^6.1.11"
+    typedoc: "npm:^0.26.4"
+    typedoc-plugin-markdown: "npm:^4.2.1"
+    typedoc-plugin-merge-modules: "npm:^6.0.0"
+    typescript: "npm:^5.5.3"
+    vitest: "npm:^2.0.2"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    react-native: ">=0.50.0"
+    react-native-svg: ">=12.1.0"
+  peerDependenciesMeta:
+    react:
+      optional: false
+    react-dom:
+      optional: true
+    react-native:
+      optional: false
+    react-native-svg:
+      optional: false
+  languageName: unknown
+  linkType: soft
+
 "@emmetio/abbreviation@npm:^2.3.3":
   version: 2.3.3
   resolution: "@emmetio/abbreviation@npm:2.3.3"
@@ -6388,6 +6434,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.24.8"
     "@babel/runtime": "npm:^7.24.8"
+    "@echo-health/react-native-spotlight-tour": "workspace:^"
     "@react-native/babel-preset": "npm:^0.74.85"
     "@react-native/metro-config": "npm:^0.74.85"
     "@rnx-kit/align-deps": "npm:^2.5.0"
@@ -6402,7 +6449,6 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-is: "npm:^18.3.1"
     react-native: "npm:0.74.3"
-    react-native-spotlight-tour: "workspace:^"
     react-native-svg: "npm:^15.4.0"
     react-native-svg-web: "npm:^1.0.9"
     react-native-web: "npm:^0.19.12"
@@ -10909,52 +10955,6 @@ __metadata:
     turbo: "npm:^2.0.6"
     typescript: "npm:^5.5.3"
     typescript-eslint: "npm:^7.16.0"
-  languageName: unknown
-  linkType: soft
-
-"react-native-spotlight-tour@workspace:^, react-native-spotlight-tour@workspace:package":
-  version: 0.0.0-use.local
-  resolution: "react-native-spotlight-tour@workspace:package"
-  dependencies:
-    "@assertive-ts/core": "npm:^2.1.0"
-    "@assertive-ts/sinon": "npm:^1.0.0"
-    "@floating-ui/react-native": "npm:^0.10.6"
-    "@testing-library/react-native": "npm:^12.5.1"
-    "@types/node": "npm:^20.14.10"
-    "@types/react-test-renderer": "npm:^18.3.0"
-    "@types/sinon": "npm:^17.0.3"
-    expect-type: "npm:^0.19.0"
-    react: "npm:^18.3.1"
-    react-fast-compare: "npm:^3.2.2"
-    react-is: "npm:^18.3.1"
-    react-native: "npm:0.74.3"
-    react-native-responsive-dimensions: "npm:^3.1.1"
-    react-native-svg: "npm:^15.4.0"
-    react-native-testing-mocks: "npm:^1.4.1"
-    react-test-renderer: "npm:^18.3.1"
-    semantic-release: "npm:^24.0.0"
-    semantic-release-yarn: "npm:^3.0.2"
-    sinon: "npm:^18.0.0"
-    styled-components: "npm:^6.1.11"
-    typedoc: "npm:^0.26.4"
-    typedoc-plugin-markdown: "npm:^4.2.1"
-    typedoc-plugin-merge-modules: "npm:^6.0.0"
-    typescript: "npm:^5.5.3"
-    vitest: "npm:^2.0.2"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-    react-native: ">=0.50.0"
-    react-native-svg: ">=12.1.0"
-  peerDependenciesMeta:
-    react:
-      optional: false
-    react-dom:
-      optional: true
-    react-native:
-      optional: false
-    react-native-svg:
-      optional: false
   languageName: unknown
   linkType: soft
 

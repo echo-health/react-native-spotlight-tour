@@ -1,13 +1,20 @@
 import dedent from "dedent";
 import React, { ReactElement, useCallback, useMemo, useRef } from "react";
-import { Alert, Animated, Button, Dimensions, SafeAreaView, Text } from "react-native";
+import {
+  Alert,
+  Animated,
+  Button,
+  Dimensions,
+  SafeAreaView,
+  Text,
+} from "react-native";
 import {
   AttachStep,
   SpotlightTourProvider,
   StopParams,
   TourBox,
   TourStep,
-} from "react-native-spotlight-tour";
+} from "@echo-health/react-native-spotlight-tour";
 
 import {
   BoldText,
@@ -28,81 +35,88 @@ export function App(): ReactElement {
       dedent`
         Step index: ${String(index)}
         Is last step: ${String(isLast)}
-      `,
+      `
     );
   }, []);
 
-  const tourSteps = useMemo((): TourStep[] => [{
-    render: ({ next }) => (
-      <SpotDescriptionView>
-        <DescriptionText>
-          <BoldText>{"Tour: Intro section\n"}</BoldText>
-          {dedent`
+  const tourSteps = useMemo(
+    (): TourStep[] => [
+      {
+        render: ({ next }) => (
+          <SpotDescriptionView>
+            <DescriptionText>
+              <BoldText>{"Tour: Intro section\n"}</BoldText>
+              {dedent`
             This is the first step of tour example.
             If you want to go to the next step, please press \
           `}
-          <BoldText>{"Next.\n"}</BoldText>
-        </DescriptionText>
-        <ButtonsGroupView>
-          <Button title="Next" onPress={next} />
-        </ButtonsGroupView>
-      </SpotDescriptionView>
-    ),
-  }, {
-    render: DocsTooltip,
-  }, {
-    arrow: true,
-    render: props => (
-      <TourBox
-        title="Tour: Customization"
-        backText="Previous"
-        nextText="Next"
-        {...props}
-      >
-        <Text>
-          {dedent`
+              <BoldText>{"Next.\n"}</BoldText>
+            </DescriptionText>
+            <ButtonsGroupView>
+              <Button title="Next" onPress={next} />
+            </ButtonsGroupView>
+          </SpotDescriptionView>
+        ),
+      },
+      {
+        render: DocsTooltip,
+      },
+      {
+        arrow: true,
+        render: (props) => (
+          <TourBox
+            title="Tour: Customization"
+            backText="Previous"
+            nextText="Next"
+            {...props}
+          >
+            <Text>
+              {dedent`
             This is the third step of tour example.
             If you want to go to the next step, please press \
           `}
-          <BoldText>{"Next.\n"}</BoldText>
-          {"If you want to go to the previous step, press "}
-          <BoldText>{"Previous.\n"}</BoldText>
-        </Text>
-      </TourBox>
-    ),
-  }, {
-    before() {
-      return new Promise<void>(resolve => {
-        Animated.spring(gap, {
-          bounciness: 100,
-          speed: 1,
-          toValue: Dimensions.get("screen").height * 0.25,
-          useNativeDriver: false, // Translate animation not supported native by native driver
-        })
-        .start(() => resolve());
-      });
-    },
-    render: ({ previous, stop }) => (
-      <SpotDescriptionView>
-        <DescriptionText>
-          <BoldText>{"Tour: Try it!\n"}</BoldText>
-          {dedent`
+              <BoldText>{"Next.\n"}</BoldText>
+              {"If you want to go to the previous step, press "}
+              <BoldText>{"Previous.\n"}</BoldText>
+            </Text>
+          </TourBox>
+        ),
+      },
+      {
+        before() {
+          return new Promise<void>((resolve) => {
+            Animated.spring(gap, {
+              bounciness: 100,
+              speed: 1,
+              toValue: Dimensions.get("screen").height * 0.25,
+              useNativeDriver: false, // Translate animation not supported native by native driver
+            }).start(() => resolve());
+          });
+        },
+        render: ({ previous, stop }) => (
+          <SpotDescriptionView>
+            <DescriptionText>
+              <BoldText>{"Tour: Try it!\n"}</BoldText>
+              {dedent`
             This is the final step of the tour example.
             You can move your view or make transitions before an step kicks off!
             If you want to go to the previous step, press \
           `}
-          <BoldText>{"Previous.\n"}</BoldText>
-          {"If you want to finish the tour, press "}
-          <BoldText>{"Finish.\n"}</BoldText>
-        </DescriptionText>
+              <BoldText>{"Previous.\n"}</BoldText>
+              {"If you want to finish the tour, press "}
+              <BoldText>{"Finish.\n"}</BoldText>
+            </DescriptionText>
 
-        <ButtonsGroupView>
-          <Button title="Previous" onPress={previous} />
-          <Button title="Finish" onPress={stop} />
-        </ButtonsGroupView>
-      </SpotDescriptionView>
-    ),
-  }], []);
+            <ButtonsGroupView>
+              <Button title="Previous" onPress={previous} />
+              <Button title="Finish" onPress={stop} />
+            </ButtonsGroupView>
+          </SpotDescriptionView>
+        ),
+      },
+    ],
+    []
+  );
 
   return (
     <SafeAreaView>
@@ -147,7 +161,9 @@ export function App(): ReactElement {
                 <TitleText>{"It is fully customizable!"}</TitleText>
               </AttachStep>
               <DescriptionText>
-                {"A variety of options are available and you can create your own"}
+                {
+                  "A variety of options are available and you can create your own"
+                }
               </DescriptionText>
             </SectionContainerView>
 
